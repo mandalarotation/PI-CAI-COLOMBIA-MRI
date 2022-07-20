@@ -6,3 +6,5 @@
 # Ignor output files.
 
 dist
+build
+app.egg-info
