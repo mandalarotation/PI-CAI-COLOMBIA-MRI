@@ -2,7 +2,8 @@
 
 
 def run():
-    pass
+    """Run task."""
+    _ = ""
 
 
 if __name__ == "__main__":

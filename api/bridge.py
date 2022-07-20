@@ -4,9 +4,14 @@
 def load(path) -> dict:
     """Load model."""
 
-    return dict
+    _ = path
+
+    return {}
 
 
 def predict(model: dict, body: dict) -> dict:
     """Predict with model."""
-    return dict()
+    _ = model
+    _ = body
+
+    return {}

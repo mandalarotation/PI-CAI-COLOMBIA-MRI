@@ -1,1 +1,3 @@
+"""Core module."""
+
 FOO = "FOO"

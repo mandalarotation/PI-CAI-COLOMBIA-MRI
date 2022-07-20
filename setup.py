@@ -1,4 +1,6 @@
-from setuptools import find_packages, setup
+"""Setup for core module."""
+
+from setuptools import setup
 
 setup(
     name="app",
