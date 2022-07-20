@@ -1,0 +1,8 @@
+# Ignore temp files.
+
+.ipynb_checkpoints/
+.DS_Store
+
+# Ignor output files.
+
+dist

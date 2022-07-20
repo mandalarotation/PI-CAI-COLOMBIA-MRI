@@ -29,12 +29,14 @@ RUN apt-get update -y && \
 	pip install jupyter jupyterlab
 	 
 
+RUN mkdir /app
 
 CMD  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH && \
 	# Only cuda 11.0
 	# ln -s /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.10 /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.11
  	export PATH=$PATH:$HOME/.pyenv/versions/$X.$Y.$Z/bin && \
 	export PYTHONPATH=/root/.pyenv/versions/$X.$Y.$Z/lib/python$X.$Y/site-packages && \
+	cd app && \
 	jupyter lab --port=8888 --no-browser --ip=0.0.0.0 --allow-root
 
 
