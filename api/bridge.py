@@ -1,8 +1,9 @@
 """Prediction app."""
 
+
 def load(path) -> dict:
     """Load model."""
-    
+
     return dict
 
 
