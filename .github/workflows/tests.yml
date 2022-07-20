@@ -20,6 +20,6 @@ jobs:
         pip install .
         pip install -r requirement.txt
         pip install -r requirement-dev.txt
-    - name: Analysing the code with pylint
+    - name: Analysing the code with pytest
       run: |
         pytest
