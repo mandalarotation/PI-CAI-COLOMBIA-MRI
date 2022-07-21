@@ -1,7 +1,7 @@
 """Prediction app."""
 
 
-def load(path) -> dict:
+def load(path: str) -> dict:
     """Load model."""
 
     _ = path
