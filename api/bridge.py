@@ -11,7 +11,7 @@ def load(path: str) -> dict:
 
 def predict(model: dict, body: dict) -> dict:
     """Predict with model."""
-
+    
     _ = model
     _ = body
 
