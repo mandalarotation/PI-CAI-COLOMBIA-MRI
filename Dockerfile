@@ -20,9 +20,9 @@ RUN apt-get update -y && \
     echo "export PYTHONPATH=$PYENVPATH/lib/python$X.$Y/site-packages" >> ~/.bashrc && \
     echo "export PATH=$PATH:$PYENVPATH/bin" >> ~/.profile && \
     echo "export PYTHONPATH=$PYENVPATH/lib/python3.8/site-packages" >> ~/.profile && \
-    export PATH=$PATH:$PYENVPATH/bin && \ 
+    export PATH=$PATH:$PYENVPATH/bin && \
     export PYTHONPATH=$PYENVPATH/lib/python$X.$Y/site-packages && \
-    # Only cuda 11.0 
+    # Only cuda 11.0
     # echo "ln -s /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.10 /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.11" >> ~/.bashrc && \
     echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc && \
     # Only cuda 11.0
@@ -31,7 +31,9 @@ RUN apt-get update -y && \
     pip install --upgrade pip && \
     pip install jupyter jupyterlab && \
     pip install -r requirement.txt && \
-    pip install . 
+    pip install -r requirement-dev.txt && \
+    pip install . && \
+    pre-commit install
 
 RUN mkdir /app
 
@@ -42,4 +44,3 @@ CMD  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH && \
     export PYTHONPATH=/root/.pyenv/versions/$X.$Y.$Z/lib/python$X.$Y/site-packages && \
     cd app && \
     jupyter lab --port=8888 --no-browser --ip=0.0.0.0 --allow-root
-
