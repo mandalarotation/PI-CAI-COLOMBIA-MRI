@@ -1,6 +1,6 @@
 """Setup for core module."""
 
-from setuptools import setup #type: ignore
+from setuptools import setup  # type: ignore
 
 setup(
     name="app",
