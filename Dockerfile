@@ -42,6 +42,13 @@ RUN mkdir /app
 CMD  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH && \
     # Only cuda 11.0
     # ln -s /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.10 /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcusolver.so.11
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn.so.8.4.1 /usr/local/cuda/lib64/libcudnn.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_adv_infer.so.8.4.1 /usr/local/cuda/lib64/libcudnn_adv_infer.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_adv_train.so.8.4.1 /usr/local/cuda/lib64/libcudnn_adv_train.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_cnn_infer.so.8.4.1 /usr/local/cuda/lib64/libcudnn_cnn_infer.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_cnn_train.so.8.4.1 /usr/local/cuda/lib64/libcudnn_cnn_train.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8.4.1 /usr/local/cuda/lib64/libcudnn_ops_infer.so && \
+    ln -s /usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8.4.1 /usr/local/cuda/lib64/libcudnn_ops_train.so && \
     export PATH=$PATH:$HOME/.pyenv/versions/$X.$Y.$Z/bin && \
     export PYTHONPATH=/root/.pyenv/versions/$X.$Y.$Z/lib/python$X.$Y/site-packages && \
     cd app && \
