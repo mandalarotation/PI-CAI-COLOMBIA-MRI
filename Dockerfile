@@ -6,11 +6,13 @@ ENV X=3
 ENV Y=8
 ENV Z=13
 
-RUN apt-get update -y && \
+RUN export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH && \
+    apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata && \
     apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-    xz-utils tk-dev libffi-dev liblzma-dev git && \
+    xz-utils tk-dev libffi-dev liblzma-dev git \
+    --allow-change-held-packages libcudnn8=8.4.1.50-1+cuda11.6 && \
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
     export PATH=$HOME/.pyenv/bin:$PATH && \
     echo "export PATH=$HOME/.pyenv/bin:$PATH" >>  ~/.bashrc && \
